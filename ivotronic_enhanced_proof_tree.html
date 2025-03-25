@@ -1,0 +1,953 @@
+
+  <style>
+    #proof-tree {
+      padding: 50px;
+      overflow-x: scroll;
+      display: flex-start;
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh;
+    }
+    .consequent {
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      display: inline-block;
+      text-align: left;
+    }
+    .consequent:hover {
+      background-color: #e0e0e0;
+      transition: background-color 0.3s ease;
+    }
+    .node {
+      display: inline-block;
+      white-space: nowrap;
+      margin: 0 2em;
+      text-align: center;
+      margin-left: 2em;
+    }
+    .bar {
+      width: 100%;
+      height: 1px;
+      background: black;
+      position: relative;
+    }
+    .rule {
+      position: absolute;
+      bottom: -0.5em;
+      right: -0.2em;
+      transform: translateX(100%);
+    }
+    .hidden-part {
+        display: none;
+        font-weight: bold;
+        color: #d9534f;
+    }
+    .toggle-btn {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        padding: 2px 5px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+  </style>
+  <script>
+      function togglePartWithDisplayName(partId, button, name) {
+          var part = document.getElementById(partId);
+          if (part.style.display === "none" || part.style.display === "") {
+              part.style.display = "inline";
+              button.textContent = "hide " + name;
+          } else {
+              part.style.display = "none";
+              button.textContent = "show " + name;
+          }
+      }
+      function hideSubtree(partId) {
+          var part = document.getElementById(partId);
+          var showButton = document.getElementById(partId + "_show");
+          part.style.display = "none";
+          showButton.style.display = "";
+      }
+      function showSubtree(partId) {
+          var part = document.getElementById(partId);
+          var showButton = document.getElementById(partId + "_show");
+          part.style.display = "";
+          showButton.style.display = "none";
+      }
+  </script>
+  <div id="proof-tree">
+
+        <button id="10086_show" class="toggle-btn" onclick="showSubtree('10086')" style="display:none;">+</button>
+        <div class="node" id="10086">
+          <div class="antecedents">
+              
+        <button id="10089_show" class="toggle-btn" onclick="showSubtree('10089')" style="display:none;">+</button>
+        <div class="node" id="10089">
+          <div class="antecedents">
+              
+        <button id="10095_show" class="toggle-btn" onclick="showSubtree('10095')" style="display:none;">+</button>
+        <div class="node" id="10095">
+          <div class="antecedents">
+              
+        <button id="10139_show" class="toggle-btn" onclick="showSubtree('10139')" style="display:none;">+</button>
+        <div class="node" id="10139">
+          <div class="antecedents">
+              
+        <button id="10145_show" class="toggle-btn" onclick="showSubtree('10145')" style="display:none;">+</button>
+        <div class="node" id="10145">
+          <div class="antecedents">
+              
+        <button id="10169_show" class="toggle-btn" onclick="showSubtree('10169')" style="display:none;">+</button>
+        <div class="node" id="10169">
+          <div class="antecedents">
+              
+        <button id="10175_show" class="toggle-btn" onclick="showSubtree('10175')" style="display:none;">+</button>
+        <div class="node" id="10175">
+          <div class="antecedents">
+              
+        <button id="10180_show" class="toggle-btn" onclick="showSubtree('10180')" style="display:none;">+</button>
+        <div class="node" id="10180">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Identity</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10181"> ⋅|[exists n. correct(output, desiredSequent(n))]vb12@VB1_resVb1<0 </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10181', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10180')">⊢</span>premise:
+              </br>
+              
+            [exists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10182"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10182', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10178_show" class="toggle-btn" onclick="showSubtree('10178')" style="display:none;">+</button>
+        <div class="node" id="10178">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">TRight</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10179"> ⋅|EMPA_{Door1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10179', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10178')">⊢</span>premise:
+              </br>
+              UA_{Door1}
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">TensorRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10176"> ⋅|(EMPA_{Door1},[exists n. correct(output, desiredSequent(n))]vb12@VB1_resVb1<0) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10176', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10175')">⊢</span>cutee:
+              </br>
+              (
+            [exists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10177"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10177', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10172_show" class="toggle-btn" onclick="showSubtree('10172')" style="display:none;">+</button>
+        <div class="node" id="10172">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10173"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10173', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10172')">⊢</span>B1:
+              </br>
+              
+            [exists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10174"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10174', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10170"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10170', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10169')">⊢</span>premise:
+              </br>
+              (
+            [exists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10171"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10171', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10149_show" class="toggle-btn" onclick="showSubtree('10149')" style="display:none;">+</button>
+        <div class="node" id="10149">
+          <div class="antecedents">
+              
+        <button id="10155_show" class="toggle-btn" onclick="showSubtree('10155')" style="display:none;">+</button>
+        <div class="node" id="10155">
+          <div class="antecedents">
+              
+        <button id="10161_show" class="toggle-btn" onclick="showSubtree('10161')" style="display:none;">+</button>
+        <div class="node" id="10161">
+          <div class="antecedents">
+              
+        <button id="10166_show" class="toggle-btn" onclick="showSubtree('10166')" style="display:none;">+</button>
+        <div class="node" id="10166">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Identity</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10167"> ⋅|[correct(output, lockAtFirst)]vb11@VB1_resVb1<0 </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10167', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10166')">⊢</span>premise:
+              </br>
+              
+            [correct(output, lockAtFirst)]vb11@
+            </br>
+            <span class="hidden-part" id="10168"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10168', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10164_show" class="toggle-btn" onclick="showSubtree('10164')" style="display:none;">+</button>
+        <div class="node" id="10164">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">TRight</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10165"> ⋅|[correct(output, lockAtFirst)]vb11@VB1_resVb1<0 </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10165', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10164')">⊢</span>premise:
+              </br>
+              UA_{VB1}
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">WedgetRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10162"> ⋅|[correct(output, lockAtFirst)]vb11@VB1_resVb1<0 </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10162', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10161')">⊢</span>cutter:
+              </br>
+              (
+            [correct(output, lockAtFirst)]vb11@
+            </br>
+            <span class="hidden-part" id="10163"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10163', this, 'test level')">show test level</button>
+    </br>/\</br>UA_{VB1})
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10158_show" class="toggle-btn" onclick="showSubtree('10158')" style="display:none;">+</button>
+        <div class="node" id="10158">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10159"> EV90:VB1|(([correct(output, lockAtFirst)]vb11@EV90:VB1/\UA_{VB1}),EMPA_{Door1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10159', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10158')">⊢</span>B3:
+              </br>
+              
+            [correct(output, true)]door1@
+            </br>
+            <span class="hidden-part" id="10160"> 〈EV90:VB1,MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10160', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10156"> ⋅|(EMPA_{Door1},[correct(output, lockAtFirst)]vb11@VB1_resVb1<0) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10156', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10155')">⊢</span>cutee:
+              </br>
+              
+            [correct(output, true)]door1@
+            </br>
+            <span class="hidden-part" id="10157"> 〈VB1_resVb1<0,MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10157', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10152_show" class="toggle-btn" onclick="showSubtree('10152')" style="display:none;">+</button>
+        <div class="node" id="10152">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10153"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10153', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10152')">⊢</span>B2:
+              </br>
+              
+            [correct(output, lockAtFirst)]vb11@
+            </br>
+            <span class="hidden-part" id="10154"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10154', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10150"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10150', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10149')">⊢</span>premise:
+              </br>
+              
+            [correct(output, true)]door1@
+            </br>
+            <span class="hidden-part" id="10151"> 〈VB1_resVb1<0,MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10151', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">WedgetRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10146"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10146', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10145')">⊢</span>cutter:
+              </br>
+              ((
+            [exists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10148"> VB1_resVb1&lt0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10148', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})</br>/\</br>
+            [correct(output, true)]door1@
+            </br>
+            <span class="hidden-part" id="10147"> 〈VB1_resVb1<0,MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10147', this, 'test level')">show test level</button>
+    )
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10142_show" class="toggle-btn" onclick="showSubtree('10142')" style="display:none;">+</button>
+        <div class="node" id="10142">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10143"> EV86:Door1,EV87:VB1,EV85:VB1|((([exists n. correct(output, desiredSequent(n))]vb12@EV85:VB1⊗UA_{Door1})/\[correct(output, true)]door1@〈EV87:VB1,EV86:Door1〉),EMPA_{PEB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10143', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10142')">⊢</span>B4:
+              </br>
+              
+            [correctVote(output)]peb1@
+            </br>
+            <span class="hidden-part" id="10144"> 〈〈(EV87:VB1∩EV85:VB1_VB1),EV86:Door1〉,MAX_{PEB1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10144', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10140"> ⋅|((EMPA_{Door1},EMPA_{VB1}),EMPA_{PEB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10140', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10139')">⊢</span>premise:
+              </br>
+              
+            [correctVote(output)]peb1@
+            </br>
+            <span class="hidden-part" id="10141"> 〈MAX_{PEB1},〈MAX_{Door1},(VB1_resVb1<0∩VB1_resVb1<0_VB1)〉〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10141', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10099_show" class="toggle-btn" onclick="showSubtree('10099')" style="display:none;">+</button>
+        <div class="node" id="10099">
+          <div class="antecedents">
+              
+        <button id="10105_show" class="toggle-btn" onclick="showSubtree('10105')" style="display:none;">+</button>
+        <div class="node" id="10105">
+          <div class="antecedents">
+              
+        <button id="10125_show" class="toggle-btn" onclick="showSubtree('10125')" style="display:none;">+</button>
+        <div class="node" id="10125">
+          <div class="antecedents">
+              
+        <button id="10131_show" class="toggle-btn" onclick="showSubtree('10131')" style="display:none;">+</button>
+        <div class="node" id="10131">
+          <div class="antecedents">
+              
+        <button id="10136_show" class="toggle-btn" onclick="showSubtree('10136')" style="display:none;">+</button>
+        <div class="node" id="10136">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Identity</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10137"> ⋅|[notexists n. correct(output, desiredSequent(n))]vb12@VB1_resVb1>=0 </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10137', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10136')">⊢</span>premise:
+              </br>
+              
+            [notexists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10138"> VB1_resVb1&ge0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10138', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10134_show" class="toggle-btn" onclick="showSubtree('10134')" style="display:none;">+</button>
+        <div class="node" id="10134">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">TRight</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10135"> ⋅|EMPA_{Door1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10135', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10134')">⊢</span>premise:
+              </br>
+              UA_{Door1}
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">TensorRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10132"> ⋅|(EMPA_{Door1},[notexists n. correct(output, desiredSequent(n))]vb12@VB1_resVb1>=0) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10132', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10131')">⊢</span>cutee:
+              </br>
+              (
+            [notexists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10133"> VB1_resVb1&ge0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10133', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10128_show" class="toggle-btn" onclick="showSubtree('10128')" style="display:none;">+</button>
+        <div class="node" id="10128">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10129"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10129', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10128')">⊢</span>C1:
+              </br>
+              
+            [notexists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10130"> VB1_resVb1&ge0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10130', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10126"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10126', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10125')">⊢</span>premise:
+              </br>
+              (
+            [notexists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10127"> VB1_resVb1&ge0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10127', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10109_show" class="toggle-btn" onclick="showSubtree('10109')" style="display:none;">+</button>
+        <div class="node" id="10109">
+          <div class="antecedents">
+              
+        <button id="10115_show" class="toggle-btn" onclick="showSubtree('10115')" style="display:none;">+</button>
+        <div class="node" id="10115">
+          <div class="antecedents">
+              
+        <button id="10122_show" class="toggle-btn" onclick="showSubtree('10122')" style="display:none;">+</button>
+        <div class="node" id="10122">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10123"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10123', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10122')">⊢</span>premise:
+              </br>
+              
+            [exists t. correct(output, lockButNotAtFirst(t))]vb11@
+            </br>
+            <span class="hidden-part" id="10124"> VB1_resVb1&ge2 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10124', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10119_show" class="toggle-btn" onclick="showSubtree('10119')" style="display:none;">+</button>
+        <div class="node" id="10119">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10120"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10120', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10119')">⊢</span>premise:
+              </br>
+              
+            [correct(output, unlockAtFirst)]vb13@
+            </br>
+            <span class="hidden-part" id="10121"> VB1_resVb1&ge3 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10121', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">WedgetRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10116"> ⋅|EMPA_{VB1} </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10116', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10115')">⊢</span>cutter:
+              </br>
+              (
+            [exists t. correct(output, lockButNotAtFirst(t))]vb11@
+            </br>
+            <span class="hidden-part" id="10118"> VB1_resVb1&ge2 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10118', this, 'test level')">show test level</button>
+    </br>/\</br>
+            [correct(output, unlockAtFirst)]vb13@
+            </br>
+            <span class="hidden-part" id="10117"> VB1_resVb1&ge3 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10117', this, 'test level')">show test level</button>
+    )
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10112_show" class="toggle-btn" onclick="showSubtree('10112')" style="display:none;">+</button>
+        <div class="node" id="10112">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10113"> EV88:VB1,EV89:VB1|(([exists t. correct(output, lockButNotAtFirst(t))]vb11@EV88:VB1/\[correct(output, unlockAtFirst)]vb13@EV89:VB1),EMPA_{Door1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10113', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10112')">⊢</span>C4:
+              </br>
+              
+            [correct(output, false)]door1@
+            </br>
+            <span class="hidden-part" id="10114"> 〈(EV88:VB1∪EV89:VB1_VB1),MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10114', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10110"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10110', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10109')">⊢</span>premise:
+              </br>
+              
+            [correct(output, false)]door1@
+            </br>
+            <span class="hidden-part" id="10111"> 〈(VB1_resVb1>=2∪VB1_resVb1>=3_VB1),MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10111', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">WedgetRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10106"> ⋅|(EMPA_{Door1},EMPA_{VB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10106', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10105')">⊢</span>cutter:
+              </br>
+              ((
+            [notexists n. correct(output, desiredSequent(n))]vb12@
+            </br>
+            <span class="hidden-part" id="10108"> VB1_resVb1&ge0 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10108', this, 'test level')">show test level</button>
+    </br>⊗</br>UA_{Door1})</br>/\</br>
+            [correct(output, false)]door1@
+            </br>
+            <span class="hidden-part" id="10107"> 〈(VB1_resVb1>=2∪VB1_resVb1>=3_VB1),MAX_{Door1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10107', this, 'test level')">show test level</button>
+    )
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10102_show" class="toggle-btn" onclick="showSubtree('10102')" style="display:none;">+</button>
+        <div class="node" id="10102">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10103"> EV83:Door1,EV84:VB1,EV82:VB1|((([notexists n. correct(output, desiredSequent(n))]vb12@EV82:VB1⊗UA_{Door1})/\[correct(output, false)]door1@〈EV84:VB1,EV83:Door1〉),EMPA_{PEB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10103', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10102')">⊢</span>C5:
+              </br>
+              
+            [output=error]peb1@
+            </br>
+            <span class="hidden-part" id="10104"> 〈〈(EV84:VB1∪EV82:VB1_VB1),EV83:Door1〉,MAX_{PEB1}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10104', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10100"> ⋅|((EMPA_{Door1},EMPA_{VB1}),EMPA_{PEB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10100', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10099')">⊢</span>premise:
+              </br>
+              
+            [output=error]peb1@
+            </br>
+            <span class="hidden-part" id="10101"> 〈MAX_{PEB1},〈MAX_{Door1},((VB1_resVb1>=2∪VB1_resVb1>=3_VB1)∪VB1_resVb1>=0_VB1)〉〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10101', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">WedgetRight</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10096"> ⋅|((EMPA_{Door1},EMPA_{VB1}),EMPA_{PEB1}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10096', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10095')">⊢</span>cutter:
+              </br>
+              (
+            [correctVote(output)]peb1@
+            </br>
+            <span class="hidden-part" id="10098"> 〈MAX_{PEB1},〈MAX_{Door1},(VB1_resVb1<0∩VB1_resVb1<0_VB1)〉〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10098', this, 'test level')">show test level</button>
+    </br>/\</br>
+            [output=error]peb1@
+            </br>
+            <span class="hidden-part" id="10097"> 〈MAX_{PEB1},〈MAX_{Door1},((VB1_resVb1>=2∪VB1_resVb1>=3_VB1)∪VB1_resVb1>=0_VB1)〉〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10097', this, 'test level')">show test level</button>
+    )
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+        <button id="10092_show" class="toggle-btn" onclick="showSubtree('10092')" style="display:none;">+</button>
+        <div class="node" id="10092">
+           <div class="antecedents"></div>
+           <div class="bar">
+              <div class="rule">Axiom</div>
+           </div>
+           
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10093"> EV79:PEB1,EV76:PEB1,EV80:Door1,EV77:Door1,EV81:VB1,EV78:VB1|(([correctVote(output)]peb1@〈EV79:PEB1,〈EV80:Door1,EV81:VB1〉〉/\[output=error]peb1@〈EV76:PEB1,〈EV77:Door1,EV78:VB1〉〉),EMPA_{CV}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10093', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10092')">⊢</span>D1:
+              </br>
+              
+            [correct(output, winner)]cv@
+            </br>
+            <span class="hidden-part" id="10094"> 〈〈(EV79:PEB1∪EV76:PEB1_PEB1),〈(EV80:Door1∪EV77:Door1_Door1),(EV81:VB1∪EV78:VB1_VB1)〉〉,MAX_{CV}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10094', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Cut</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10090"> ⋅|(((EMPA_{Door1},EMPA_{VB1}),EMPA_{PEB1}),EMPA_{CV}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10090', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10089')">⊢</span>goal:
+              </br>
+              
+            [correct(output, winner)]cv@
+            </br>
+            <span class="hidden-part" id="10091"> 〈〈〈(MAX_{Door1}∪MAX_{Door1}_Door1),((VB1_resVb1<0∩VB1_resVb1<0_VB1)∪((VB1_resVb1>=2∪VB1_resVb1>=3_VB1)∪VB1_resVb1>=0_VB1)_VB1)〉,(MAX_{PEB1}∪MAX_{PEB1}_PEB1)〉,MAX_{CV}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10091', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+     
+ 
+          </div>
+          <div class="bar">
+              <div class="rule">Downgrade</div>
+          </div>
+          
+          <div class="consequent">
+            <div style="display: inline-block; text-align: left;">
+              <span class="hidden-part" id="10087"> ⋅|(((EMPA_{Door1},EMPA_{VB1}),EMPA_{PEB1}),EMPA_{CV}) </span>
+              <button class="toggle-btn" onclick="togglePartWithDisplayName('10087', this, 'bunch')">show bunch</button>
+              </br>
+              <span onclick="hideSubtree('10086')">⊢</span>goal:
+              </br>
+              
+            [correct(output, winner)]cv@
+            </br>
+            <span class="hidden-part" id="10088"> 〈〈〈MAX_{Door1},MAX_{VB1}〉,MAX_{PEB1}〉,MAX_{CV}〉 </span>
+            <button class="toggle-btn" onclick="togglePartWithDisplayName('10088', this, 'test level')">show test level</button>
+    
+            </div>
+          </div>
+    
+        </div>
+    </div>
