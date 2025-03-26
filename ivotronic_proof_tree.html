@@ -81,6 +81,41 @@
           showButton.style.display = "none";
       }
   </script>
+  <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; background-color: #f8f9fa;">
+    <h3>How to Interact with the Proof Tree</h3>
+    <ul>
+        <li><strong>Collapse Nodes:</strong> Click the <span style="font-family: monospace;">⊢</span> symbol in any node to collapse its subtree (a <button class="toggle-btn" style="cursor: pointer; margin: 0 3px; padding: 2px 5px;">+</button> button will appear in its place)</li>
+        <li><strong>Expand Nodes:</strong> Click the <button class="toggle-btn" style="cursor: pointer; margin: 0 3px; padding: 2px 5px;">+</button> button to expand collapsed nodes and show hidden subtrees</li>
+        <li><strong>Toggle Technical Details:</strong> Use "show bunch" buttons to reveal the bunch and "show test level" buttons to display test level</li>
+        <li><strong>Navigate Layout:</strong> Scroll horizontally to view different parts of the proof tree (➔)</li>
+    </ul>
+    <p>Tip: Start with top-level nodes and collapse/expand sections to manage complexity. Blue buttons always indicate interactive elements.</p>
+  </div>
+  <div style="margin: 20px; padding: 10px; border: 1px solid #ddd; background-color: #f8f9fa; font-size: 14px;">
+    <h3 style="margin: 5px 0 10px 0;">Abbreviations</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 3px; width: 25%;"><strong>UA</strong></td>
+        <td style="padding: 3px;">Unit Additive $\top$</td>
+      </tr>
+      <tr>
+        <td style="padding: 3px;"><strong>UM</strong></td>
+        <td style="padding: 3px;">Unit Multiplicative ($\mathbb{1}$)</td>
+      </tr>
+      <tr>
+        <td style="padding: 3px;"><strong>EMPA</strong></td>
+        <td style="padding: 3px;">Unit of Additive Separation ($\varnothing^{+}$)</td>
+      </tr>
+      <tr>
+        <td style="padding: 3px;"><strong>EMPM</strong></td>
+        <td style="padding: 3px;">Unit of Multiplicative Separation ($\varnothing^{\times}$)</td>
+      </tr>
+    </table>
+    <p style="margin: 8px 0 0 0; font-size: 13px; color: #666;">
+      <em>Refer to this to read bunch detail expanded by "show bunch"</em>
+    </p>
+  </div>
+  <hr>
   <div id="proof-tree">
 
         <button id="10086_show" class="toggle-btn" onclick="showSubtree('10086')" style="display:none;">+</button>
